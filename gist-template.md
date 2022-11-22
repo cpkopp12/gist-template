@@ -1,4 +1,9 @@
+
+
 # Title (replace with your title)
+Matching a url
+/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/
+
 
 Introductory paragraph (replace this with your text)
 
@@ -23,9 +28,12 @@ Briefly summarize the regex you will be describing and what you will explain. In
 ## Regex Components
 
 ### Anchors
-
+Anchors are used to define the current location in a string. For example, the anchor charactor ^ signifies the tart of a string while $ signigies the end. The search - ^abc - would match anystring which began with the characters abc, while the search - abc$ - will match a string which ends with the characters abc.
 ### Quantifiers
-
+Quantifiers serve to select a variable number of characters or sets of characters. The quantifiers which appear in our example are * (zero times or more), ? (zero times or once), and {x,y} (atleast x times, atmost y times).
+Examples: A*b would match: b (or the b in) mb (or) Ab (or) AAAb
+          A+b would match: Ab (or) AAAb, BUT WOULD NOT MATCH: b (or) mb
+          A{3,5}b would match: AAAb (or) AAAAb (or) AAAAAb
 ### OR Operator
 
 ### Character Classes
