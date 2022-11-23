@@ -15,15 +15,10 @@ Briefly summarize the regex you will be describing and what you will explain. In
 
 - [Anchors](#anchors)
 - [Quantifiers](#quantifiers)
-- [OR Operator](#or-operator)
 - [Character Classes](#character-classes)
-- [Flags](#flags)
 - [Grouping and Capturing](#grouping-and-capturing)
-- [Bracket Expressions](#bracket-expressions)
 - [Greedy and Lazy Match](#greedy-and-lazy-match)
-- [Boundaries](#boundaries)
-- [Back-references](#back-references)
-- [Look-ahead and Look-behind](#look-ahead-and-look-behind)
+- [Matching a URL](#matching-a-url)
 
 ## Regex Components
 
@@ -34,23 +29,24 @@ Quantifiers serve to select a variable number of characters or sets of character
 Examples: A*b would match: b (or the b in) mb (or) Ab (or) AAAb
           A+b would match: Ab (or) AAAb, BUT WOULD NOT MATCH: b (or) mb
           A{3,5}b would match: AAAb (or) AAAAb (or) AAAAAb
-### OR Operator
 
 ### Character Classes
-
-### Flags
-
+Character Classes are used to define a set of characters such that any one of the specified characters will provide a match. They are denoted with square brackets, [], and contain the allowed characters within. Including a carat [^ ] at the start of the class turns it into the inverse, or any character not specified within the set.
+Examples: [abc]a would match: aa (or) ba (or) ca
+          [\dA-C]b would match: 2b (or) Bb (or) any one digit 0-9 or any one of the capital letters A,B,C followed by b
+          [^\da-d] would match: any character that is neither a digit 0-9 nor a,b,c,d
 ### Grouping and Capturing
-
-### Bracket Expressions
+Grouping refers to placing one or more characters within parentheses in order to gain more control over how the expression is evaluated. This is commonly seen when using quantifiers in order to specify what the quantifier applies to. Capturing allows us to reference groups later in the expression. The first group used in an expression can be referenced again with - \1 - and the second with - \2. For example, the expression - 
+(ab)c(de)f\1\2 - is identicle to - abcdefabde.
+Examples: (abc)+ would match: abcabc
+          a(bc)+ would match: abcbc
+          d(e)fin\1 would match: define
 
 ### Greedy and Lazy Match
 
-### Boundaries
 
-### Back-references
+### Matching a URL
 
-### Look-ahead and Look-behind
 
 ## Author
 
