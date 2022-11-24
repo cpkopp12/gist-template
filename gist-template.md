@@ -18,12 +18,11 @@ Briefly summarize the regex you will be describing and what you will explain. In
 - [Character Classes](#character-classes)
 - [Grouping and Capturing](#grouping-and-capturing)
 - [Greedy and Lazy Match](#greedy-and-lazy-match)
-- [Matching a URL](#matching-a-url)
 
 ## Regex Components
 
 ### Anchors
-Anchors are used to define the current location in a string. For example, the anchor charactor ^ signifies the tart of a string while $ signigies the end. The search - ^abc - would match anystring which began with the characters abc, while the search - abc$ - will match a string which ends with the characters abc. <br />
+Anchors are used to define the current location in a string. For example, the anchor charactor ^ signifies the tart of a string while $ signigies the end. The search - ^abc - would match the characters abc only if they are the first three characters of the string, while the search - abc$ - will match abc only if they are the last three characters of a string.  <br />
 ### Quantifiers
 Quantifiers serve to select a variable number of characters or sets of characters. The quantifiers which appear in our example are * (zero times or more), ? (zero times or once), and {x,y} (atleast x times, atmost y times). <br />
 Examples: A*b would match: b (or the b in) mb (or) Ab (or) AAAb <br />
@@ -43,9 +42,10 @@ Examples: (abc)+ would match: abcabc <br />
           d(e)fin\1 would match: define <br />
 
 ### Greedy and Lazy Match
-
-
-### Matching a URL
+A greedy match will match as many characters as possible in order to make the entire regex expression match, where as a lazy match will match as few characters as possible to do the same. The quantifers + and * are both greedy, but can be modified to +? and *? to make them lazy quantifers. For example, given the string 15AAAA: <br />
+\d\dA+ and \d\dA* will both match 15AAAA <br />
+\d\dA+? will only match 15A <br />
+\d\dA*? will only match 15 <br />
 
 
 ## Author
